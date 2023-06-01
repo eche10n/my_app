@@ -1,0 +1,7 @@
+%button.button__left.theme{:type => "button"}
+  = link_to t('.select_theme'), choose_theme_path,
+  prompt: 'выберите тему',
+  :title => "Select theme from your device folder",
+  locale: @current_locale,
+  :format => "js",
+  remote: true

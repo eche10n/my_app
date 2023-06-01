@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @image.name
+%p
+  %b Image:
+  = @image.file
+%p
+  %b Value:
+  = @image.ave_value
+
+= link_to 'Edit', edit_image_path(@image)
+\|
+= link_to 'Back', images_path

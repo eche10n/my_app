@@ -1,0 +1,66 @@
+%h1
+  = t('.work_place')
+//%p Find me in app/views/work/index.html.haml
+
+= render 'jq_code'
+.image
+  .row
+    .col-md-3
+      .left_controls
+        .select_theme
+          = render 'work/button_theme_select', locale: @current_locale
+
+          %br
+        %span.common_value
+          = t('.common_value')
+          %h2.common{:title => "Common value"} #{@common_ave_value}
+        %span.total_values
+          = t('.total_values')
+          %h2.total{:title => "Total values"} #{@values_qty.round}
+          = link_to t('.all_values'), '/values'
+
+    .col-md-9
+      .image_display
+
+        .row.image
+          .col-md-12
+            %h2.up-theme{:title => t('.theme_name')}
+              #{@selected_theme}
+
+          .col-md-12
+            %h2.up{:title => "Image file name"}
+              #{@selected_image_name}
+
+          .col-md-1
+            .img-left-side{style: "display: none;"}
+              %h3{:title => "list to previous image"}
+                %i.fa.fa-chevron-circle-left.strong
+
+          .col-md-10
+            .img-center{:title => "Default image"}
+              %img{:alt => "Default Image", :src => 'assets/pictures/Fftbox.jpg', :title => "Default image",:style => 'width:30%; height:30%;' }
+              .image_user_value{:title => "Expert value"}
+
+          .col-md-1
+            .img-right-side{style: "display: none;"}
+              %h3{:title => "list to next image"}
+                %i.fa.fa-chevron-circle-right
+
+        .row.diag
+          .col-md-12
+            .image_diag{style: "display: none;"}
+
+              #chosen_value 50
+              %h2.down{:title => "Value scale"}
+                = t(".make_decision")
+              %button.button__results.save{:title => "Save image diag results"}
+                %a{"data-remote" => "true", :format => "js", :href => "#", :title => "Save image diag results"}
+                  = t(".save_decision")
+
+              %p.left 0
+              #slider
+                %input#slide{:max => "100", :min => "5", :value => "50",
+                             :onchange => "updateSlider(this.value)",
+                             :step => "5", :type => "range"}
+              %p.right 100
+              %br
