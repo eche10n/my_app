@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+#gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -26,6 +26,37 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem "haml-rails"
+
+gem "html2haml"
+
+gem 'turbolinks'
+
+#gem 'bootstrap'
+
+gem 'sass-rails'
+
+gem 'bootstrap-sass'
+
+gem 'font-awesome-sass'
+
+gem 'font-awesome-rails'
+
+gem 'pg'
+
+gem 'activerecord-reset-pk-sequence'
+
+gem 'bcrypt'
+
+gem 'active_model_serializers'
+
+gem 'jquery-rails'
+
+gem 'jquery-ui-rails'
+
+gem 'rails-asset-jqueryui'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -56,7 +87,12 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  # Call 'byebug' anywhere in the code to stop execution and
+  # get a debugger console
+  gem 'byebug', platform: :mri
+  # Лучше отображает ошибки
+  gem "better_errors"
+  gem "binding_of_caller"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
